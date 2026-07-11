@@ -1,0 +1,22 @@
+# Dependencies (NEVER commit this)
+node_modules/
+
+# Environment variables & secrets (NEVER commit this)
+.env
+.env.local
+.env.production
+
+# Build / Production outputs
+dist/
+build/
+
+# Operating system / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
