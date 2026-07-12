@@ -48,7 +48,7 @@ jobs:
             cd /home/ec2-user/expressApp_Deployment
             git pull origin main
             docker compose pull
-            docker compose up -d
+            docker compose up -d --force-recreate
     
 
        
