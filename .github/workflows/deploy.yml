@@ -28,6 +28,7 @@ jobs:
           context: .
           file: ./dockerfile
           push: true
+          no-cache: true
           tags: |
             sudankhanal/firstdeployment:latest
             sudankhanal/firstdeployment:${{ github.sha }}
