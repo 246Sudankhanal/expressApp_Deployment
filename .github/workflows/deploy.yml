@@ -32,7 +32,23 @@ jobs:
             sudankhanal/firstdeployment:latest
             sudankhanal/firstdeployment:${{ github.sha }}
 
+  
+  deploy-to-server:
+    needs: build-and-push   # Runs ONLY after build-and-push succeeds!
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: SSH into server and update deployment
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd /path/to/your/app/folder
+            git pull origin main
+            docker compose pull
+            docker compose up -d
     
 
        
