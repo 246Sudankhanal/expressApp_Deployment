@@ -8,6 +8,9 @@ app.get('/app',(req,res)=>{
 app.get('/health',(req,res)=>{
     res.json({status:"ok",branch:"test-pr-from-other-laptop"})
 })
+app.get('/about',(req,res)=>{
+    res.json({app:"expressApp_Deployment",author:"sudan"})
+})
 app.get('/app/page',(req,res)=>{
     res.send(`<html>
         <body>
