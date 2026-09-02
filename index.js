@@ -5,6 +5,12 @@ app.use(express.json({urlencoded:true}))
 app.get('/app',(req,res)=>{
     res.json({message:"deployed first message then again form ci/cd "})
 })
+app.get('/health',(req,res)=>{
+    res.json({status:"ok",branch:"test-pr-from-other-laptop"})
+})
+app.get('/about',(req,res)=>{
+    res.json({app:"expressApp_Deployment",author:"sudan"})
+})
 app.get('/app/page',(req,res)=>{
     res.send(`<html>
         <body>
@@ -16,5 +22,5 @@ app.get('/app/page',(req,res)=>{
 
 })
 app.listen(PORT,()=>{
-    console.log("app is  not listening at port:",PORT)
+    console.log("app is listening at port:",PORT)
 })
